@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 1.2'
 #Use faker to help generate development data automatically
 gem 'faker'
 
+#add devise for User Authentication
+gem 'devise'
+
 #twitter bootstrap
 gem 'bootstrap-sass', '~> 3.1.1'
 
