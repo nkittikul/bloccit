@@ -40,6 +40,9 @@ gem 'faker'
 #add devise for User Authentication
 gem 'devise'
 
+#pundit for authorization rules
+gem 'pundit'
+
 #twitter bootstrap
 gem 'bootstrap-sass', '~> 3.1.1'
 
