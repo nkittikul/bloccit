@@ -49,6 +49,16 @@ gem 'bootstrap-sass', '~> 3.1.1'
 #redcarpet for post markdown
 gem 'redcarpet'
 
+#stuff for uploading images
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog'
+
+#figaro to manage S3 credentials
+gem 'figaro'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
