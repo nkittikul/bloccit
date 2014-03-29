@@ -59,6 +59,9 @@ gem 'fog'
 #figaro to manage S3 credentials
 gem 'figaro'
 
+#pagination
+gem 'will_paginate', '~> 3.0.5'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
