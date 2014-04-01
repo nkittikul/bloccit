@@ -11,6 +11,10 @@
       <%= @post.user.name %>
     </small>
     <p><%= markdown @post.body %></p>
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <h4>Comments:</h4>
+    <%= render @comments %>
+    <%= will_paginate @comments %>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
