@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  respond_to :html, :js
+  
   def new
     @post = Post.find(params[:post_id])
     @comment = Comment.new
@@ -17,7 +19,7 @@ class CommentsController < ApplicationController
       redirect_to [@topic, @post], notice: "Comment was saved successfully."
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      render "posts/show"
+      render "topics/posts/show"
     end
   end
 
@@ -26,14 +28,16 @@ class CommentsController < ApplicationController
     @post = @topic.posts.find(params[:post_id])
 
     @comment = @post.comments.find(params[:id])
-
     authorize @comment
+
     if @comment.destroy
       flash[:notice] = "Comment was removed."
-      redirect_to [@topic, @post]
     else
       flash[:error] = "Comment couldn't be deleted. Try again."
-      redirect_to [@topic, @post]
+    end
+
+    respond_with(@comment) do |f|
+      f.html { redirect_to [@topic, @post] }
     end
   end
 

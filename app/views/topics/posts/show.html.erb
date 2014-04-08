@@ -13,7 +13,7 @@
     </small>
     <p><%= markdown @post.body %></p>
     <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
-    <h4>Comments:</h4>
+    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
     <%= render partial: 'comments/comment', collection: @comments %>
     <%= will_paginate @comments %>
   </div>
